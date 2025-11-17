@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <!-- Head Section -->
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="/styles/details.css">
+        <link rel="stylesheet" href="/styles/main.css">
+        <title> The New Matt Hub! </title>
+    </head>
+
+    <!-- Body Section -->
+
+    <body class="bg-blue-green" style="padding: 5%">
+
+        <span class="faculty-glyphic-regular" style="color: white; font-size: 200%;"> Welcome to the New Matt Hub!</span>
+
+        <!-- Container Section -->
+
+        <div class="container-fluid page-container bg-beige" style="border: 5px solid #7ea5e1">
+
+            <!-- Inter-Container Navbar -->
+
+            <div class="bg-blue-dark" style="padding: 10px; border-radius: 10px;">
+                <ul class="nav nav-pills nav-fill faculty-glyphic-regular">
+                    <li class="nav-item">
+                        <a id="homePageButton" class="nav-link active navbar-button" aria-current="page" href="#" data-bs-target="#homePageSectionIndicators" data-bs-slide-to="0" aria-label="Slide 1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="subProject1Button" class="nav-link navbar-button" href="#" data-bs-target="#homePageSectionIndicators" data-bs-slide-to="1" aria-label="Slide 2"> My Cats </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="subProject2Button" class="nav-link navbar-button" href="#" data-bs-target="#homePageSectionIndicators" data-bs-slide-to="2" aria-label="Slide 3"> My Music List </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="subProject3Button" class="nav-link navbar-button" href="#" data-bs-target="#homePageSectionIndicators" data-bs-slide-to="3" aria-label="Slide 4">Sub Project 3</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Container Contents -->
+
+            <div id="homePageSectionIndicators" class="carousel slide">
+                <div class="carousel-inner">
+
+                    <!-- About Me Tab -->
+                    <div class="carousel-item home-project-container active">
+                        <div class="home-project-container-content"> 
+                            About Me!
+                        
+                        </div>
+                    </div>
+
+                    <!-- My Cats Tab -->
+                    <div class="carousel-item home-project-container bg-beige">
+                        <div class="home-project-container-content"> 
+
+                            <!-- Bella's Row -->
+                            <div class="cat-clickable faculty-glyphic-regular header-font-size" data-bs-toggle="collapse" href="#bellaSection" aria-expanded="false" aria-controls="bellaSection" data-index="0"> <b> Click to Learn About Bella! </b> </div>
+                            <br>
+
+                            <div id="bellaSection" class="collapse content-row">
+                                <div class="content-col-img" style="flex: 1 3 50%; order: -1;">
+                                    <img src="/images/Bella.jpeg" alt="Bella Overtaking The Towels" class="cat-image">
+                                    <span class="faculty-glyphic-regular small-font-size"> Bella Overtaking The Towels </span>
+                                </div>
+                                <div class="content-col" style="flex: 2 3 auto; order: 1; padding: 10px 25px;">
+                                    <h1 class="faculty-glyphic-regular header-font-size" style="color: black; text-align: center;"> <b><u> * Bella * </u></b></h1>
+                                    <p class="faculty-glyphic-regular normal-font-size" style="color: black;">
+                                        This is a short paragraph about Bella!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Buddy's Row -->
+                            <div class="cat-clickable faculty-glyphic-regular header-font-size" data-bs-toggle="collapse" href="#buddySection" aria-expanded="false" aria-controls="buddySection" data-index="1"> <b> Click to Learn About Buddy! </b> </div>
+                            <br>
+
+                            <div id="buddySection" class="collapse content-row">
+                                <div class="content-col-img" style="flex: 1 3 50%; order: -1;">
+                                    <img src="/images/Buddy.jpeg" alt="Little Angry Buddy Face" class="cat-image">
+                                    <span class="faculty-glyphic-regular small-font-size"> Little Angry Buddy Face </span>
+                                </div>
+                                <div class="content-col" style="flex: 2 3 auto; order: 1; padding: 10px 25px;">
+                                    <h1 class="faculty-glyphic-regular header-font-size" style="color: black; text-align: center;"> <b><u> * Buddy * </u></b></h1>
+                                    <p class="faculty-glyphic-regular normal-font-size" style="color: black;">
+                                        This is a short paragraph about Buddy!
+                                    </p>
+                                </div>
+                            </div>
+                        
+                            <hr>
+
+                            <!-- Oliver's Row -->
+                            <div class="cat-clickable faculty-glyphic-regular header-font-size" data-bs-toggle="collapse" href="#oliverSection" aria-expanded="false" aria-controls="oliverSection" data-index="2"> <b> Click to Learn About Oliver! </b> </div>
+                            <br>
+
+                            <div id="oliverSection" class="collapse content-row">
+                                <div class="content-col-img" style="flex: 1 3 50%; order: -1;">
+                                    <img src="/images/Oliver.jpeg" alt="Oliver Delivers 'Orange Cat' Energy" class="cat-image">
+                                    <span class="faculty-glyphic-regular small-font-size"> Oliver Delivers 'Orange Cat' Energy </span>
+                                </div>
+                                <div class="content-col" style="flex: 2 3 auto; order: 1; padding: 10px 25px;">
+                                    <h1 class="faculty-glyphic-regular header-font-size" style="color: black; text-align: center;"> <b><u> * Oliver * </u></b></h1>
+                                    <p class="faculty-glyphic-regular normal-font-size" style="color: black;">
+                                        This is a short paragraph about Oliver!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Poppy's Row -->
+                            <div class="cat-clickable faculty-glyphic-regular header-font-size" data-bs-toggle="collapse" href="#poppySection" aria-expanded="false" aria-controls="poppySection" data-index="3"> <b> Click to Learn About Poppy! </b> </div>
+                            <br>
+
+                            <div id="poppySection" class="collapse content-row">
+                                <div class="content-col-img" style="flex: 1 3 50%; order: -1;">
+                                    <img src="/images/Poppy.jpeg" alt="Poppy Helps Me Pack For College" class="cat-image">
+                                    <span class="faculty-glyphic-regular small-font-size"> Poppy Helps Me Pack For College </span>
+                                </div>
+                                <div class="content-col" style="flex: 2 3 auto; order: 1; padding: 10px 25px;">
+                                    <h1 class="faculty-glyphic-regular header-font-size" style="color: black; text-align: center;"> <b><u> * Poppy * </u></b></h1>
+                                    <p class="faculty-glyphic-regular normal-font-size" style="color: black;">
+                                        This is a short paragraph about Poppy!
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!-- My Music Tab -->
+                    <div class="carousel-item home-project-container bg-beige">
+                        <div class="home-project-container-content"> 
+
+                            <div id="favoriteSong">
+                                <div class="faculty-glyphic-regular header-font-size" style="margin: 15px 0px;"> My Favorite Song! </div>
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Xls4cNOwy01dtrNXb1inG?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                                <span class="faculty-glyphic-regular normal-font-size"> Coming from their 1968 Wheels of Fire album, Cream's song White Room has easily won itself as the top of my favorite songs. Not only are the vocals and psychedelic sound effects stunning, but the instrumental guitar solo is one of my favorites, too! </span>
+                            </div>
+
+                            <div class="faculty-glyphic-regular header-font-size" style="margin: 15px 0px;"> My Current Yearly Playlist! </div>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3NOgPVD0m7PcsdQ28UZC8W?utm_source=generator&theme=0" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item home-project-container bg-beige">
+                        <div class="home-project-container-content"> This is sub project 3 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- Footer Section -->
+
+    <footer>
+        <!-- Bootstrap Scripts -->
+        <script src="/scripts/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+        <!-- Firebase Scripts -->
+        <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+        <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+        <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+        <script src="/__/firebase/init.js?useEmulator=true"></script>
+        <script src="/scripts/main.js"></script>
+    </footer>
+
+</html>

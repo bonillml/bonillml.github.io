@@ -1,0 +1,76 @@
+
+/* Background Colors: Lights and Whites */
+
+.bg-beige
+{
+    background-color: #f9f1e4;
+}
+
+.bg-gray
+{
+    background-color: #808080;
+}
+
+/* Background Colors: Blues */
+
+.bg-blue-dark
+{
+    background-color: #161925;
+}
+
+.bg-blue-gray
+{
+    background-color: #7ea5e1;
+}
+
+.bg-blue-green
+{
+    background-color: #406e8e;
+}
+
+.bg-blue-navy
+{
+    background-color: #03396c;
+}
+
+/* Font Detailing */
+
+.faculty-glyphic-regular 
+{
+    font-family: "Faculty Glyphic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header-font-size
+{
+    font-size: 150%;
+}
+
+.normal-font-size
+{
+    font-size: 100%
+}
+
+.small-font-size
+{
+    font-size: 50%;
+}
+
+@media (min-width: 376px) 
+{
+    .header-font-size
+    {
+        font-size: 200%;
+    }
+
+    .normal-font-size
+    {
+        font-size: 150%
+    }
+
+    .small-font-size
+    {
+        font-size: 100%;
+    }
+}
