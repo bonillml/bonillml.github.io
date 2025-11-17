@@ -7,7 +7,7 @@
 
 .mb-body-section-even
 {
-    background-color: white;
+    background-color: rgb(231, 240, 244);
     height: 50vh;
     width: 100vw;
 }
@@ -22,6 +22,9 @@
 .mb-navbar
 {
     background-color: rgb(29, 33, 57);
+
+    max-width: 100vw;
+    max-height: 75px;
 
     height: 75px;
     width: 100vw;
