@@ -11,7 +11,16 @@
     font-weight: bolder;
     max-height: 7vh;
     margin: 2vh 0 2vh 0;
+    text-wrap: wrap;
     width: 50vh;
+}
+
+.mb-body-header-medium
+{
+    font-size: 5vh;
+    font-weight: bolder;
+    margin: 2vh 0 2vh 0;
+    text-wrap: wrap;
 }
 
 .mb-body-header-even 
@@ -47,6 +56,12 @@
     background-color: rgb(64, 73, 123);
 }
 
+.mb-body-text
+{
+    font-size: 2vh;
+    text-wrap: wrap;
+}
+
 .mb-body-text-odd
 {
     color: rgb(219, 241, 250);
@@ -55,6 +70,14 @@
 .mb-body-text-even
 {
     color: black
+}
+
+.mb-game-button
+{
+    font-size: 3.5vw;
+    height: 10vh;
+    margin-top: 50px;
+    width: 25vw;
 }
 
 .mb-navbar
@@ -87,8 +110,8 @@
 .mb-square-image
 {
     aspect-ratio: 1;
-    margin: 25px;
-    width: 25vw;
+    margin: 3.5vw;
+    width: 15vw;
 }
 
 /* IDs (#) */
