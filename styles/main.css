@@ -84,4 +84,11 @@
     
 }
 
+.mb-square-image
+{
+    aspect-ratio: 1;
+    margin: 25px;
+    width: 25vw;
+}
+
 /* IDs (#) */
