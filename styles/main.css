@@ -17,7 +17,15 @@
 
 .mb-body-header-medium
 {
-    font-size: 5vh;
+    font-size: 4vh;
+    font-weight: bolder;
+    margin: 2vh 0 2vh 0;
+    text-wrap: wrap;
+}
+
+.mb-body-header-small
+{
+    font-size: 2vh;
     font-weight: bolder;
     margin: 2vh 0 2vh 0;
     text-wrap: wrap;
@@ -62,14 +70,24 @@
     text-wrap: wrap;
 }
 
-.mb-body-text-odd
+.mb-body-text-indent
 {
-    color: rgb(219, 241, 250);
+    margin: 10px 3.5vw 10px 3.5vw;
 }
 
 .mb-body-text-even
 {
     color: black
+}
+
+.mb-body-text-odd
+{
+    color: rgb(219, 241, 250);
+}
+
+.mb-content-container
+{
+    padding: 0px 1.5vw 0px 1.5vw;
 }
 
 .mb-game-button
@@ -107,11 +125,76 @@
     
 }
 
-.mb-square-image
+/* About Me Section */
+
+.mb-am-container
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 5vw 10px 5vw;
+}
+
+.mb-am-name
+{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+}
+
+.mb-am-text
+{
+    font-size: 20px;
+    max-width: 50vw;
+    overflow-wrap: break-word;
+    width: calc(80vw - 300px)
+}
+
+.mb-am-text-container
+{
+    margin: 3.5vw;
+}
+
+.mb-am-portrait
 {
     aspect-ratio: 1;
+    border-radius: 15px;
     margin: 3.5vw;
-    width: 15vw;
+    max-width: 250px;
+    object-fit: cover;
+    object-position: center center;
+    width: 200px;
+}
+
+@media screen and (max-width: 768px)
+{
+    .mb-am-container
+    {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mb-am-name 
+    {
+        text-align: center;
+    }
+
+    .mb-am-text
+    {
+        max-width: 75vw;
+        text-align: center;
+        width: 75vw
+    }
+
+    .mb-am-text-container
+    {
+        margin: 15px;
+    }
+
+    .mb-am-portrait
+    {
+        margin: 1.5vw;
+    }
 }
 
 /* IDs (#) */
