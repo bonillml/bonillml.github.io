@@ -82,7 +82,8 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) 
+{
 
     .mb-row-to-col-container
     {
@@ -195,37 +196,51 @@
 
 /* Careers & Interests */
 
-.mb-ci-date {
+.mb-ci-date 
+{
     color: rgb(29, 33, 57);
     font-size: 12px;
     font-weight: bold;
     margin: 5px 0px
 }
 
-.mb-ci-list {
+.mb-ci-list 
+{
 
     border-left-color: black;
     border-left-style: solid;
     border-left-width: 5px;
 }
 
-.mb-ci-list-item {
+.mb-ci-list-item 
+{
     margin-bottom: 15px;
+    max-width: 50vw;
 }
 
-.mb-ci-list-item-desc {
+.mb-ci-list-item-desc 
+{
 
     font-size: 16px;
     font-weight: bold;
     margin: 5px 0px;
 }
 
-.mb-ci-list-container {
+.mb-ci-list-container 
+{
 
     align-items: center;
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px)
+{
+    .mb-ci-list-item
+    {
+        width: 40vw;
+    }
 }
 
 /* IDs (#) */
