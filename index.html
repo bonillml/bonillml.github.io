@@ -2,7 +2,7 @@
 
 <html lang="en" s>
 
-    <!-- Head Section -->
+    <!-- Head Wrapper -->
     <head>
 
         <!-- Encoding & Controll -->
@@ -21,7 +21,7 @@
 
     </head>
 
-    <!-- Body Section -->
+    <!-- Body Wrapper -->
     <body class="mb-body">
 
         <!-- Navigation Bar -->
@@ -37,42 +37,109 @@
         <div class="container-fluid" style="--bs-gutter-x: 0rem">
 
             <!-- Info Section 0 -->
-            <div id="body-section-0" class="mb-body-section mb-body-section-even ">
+            <section id="body-section-0" class="mb-body-section mb-body-section-even ">
 
                 <!-- Section Content -->
                 <div class="mb-content-container container-fluid">
 
-                    <!-- Basic Information -->
-                    <div class="mb-am-container">
-                        <div>
+                    <!-- Basic Information / About Me-->
+                    <div class="mb-row-to-col-container">
+                        <div title="Matt Bonilla">
                             <img src="./images/self_portrait.jpg" alt="Author Picture" class="mb-am-portrait">
                         </div>
-                        <div class="mb-am-text-container flex-grow-1">
-                            <header class="mb-am-name mb-body-text-even"> Matt Bonilla </header>
+                        <section class="mb-am-text-container flex-grow-1">
+                            <header class="mb-body-section-title mb-body-text-even"> Matt Bonilla </header>
                             <div class="d-flex flex-column">
                                 <div class="mb-am-text mb-body-text-even"> Double Major in Computer Science and Computer Engineering at Rose-Hulman Institute of Technology. </div>
-                                <div class="mb-media-container" style="margin-top: 30px">
-                                    <a href="mailto:bonillml@rose-hulman.edu" class="media-link"><img src="./images/email_icon.svg" alt="Email" class="media-icon"></a>
-                                    <a href="https://www.linkedin.com/in/matthew-bonilla-7897b0318/" class="media-link">
+                                <nav class="mb-media-container" style="margin-top: 30px">
+                                    
+                                    <!-- Social Media Links & Icons -->
+                                    <a href="mailto:mbonilla2023@gmail.com" title="Email" class="media-link">
+                                        <img src="./images/email_icon.svg" alt="Email" class="media-icon">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/matthew-bonilla-7897b0318/" title="LinkedIn" class="media-link">
                                         <span class="linkedin-interactive">
                                             <img src="./images/LI-In-Bug.png" alt="LinkedIn" class="media-icon">
-                                        </span>
+                                        </span> 
                                     </a>
-                                </div>
+                                    <a href="https://github.com/bonillml" title="GitHub" class="media-link">
+                                        <img src="./images/GitHub_Invertocat_Black.svg" alt="GitHub" class="media-icon">
+                                    </a>
+                                </nav>
                             </div>
-                        </div>
+                        </section>
                     </div>          
                 </div>
-            </div>
+            </section>
 
             <!-- Info Section 1 -->
             <div id="body-section-1" class="mb-body-section mb-body-section-odd">
 
                 <!-- Section Content -->
                 <div class="mb-content-container container-fluid">
-         
+                    
                 </div>
             </div>
+
+            <!-- Info Section 2 -->
+            <section id="body-section-2" class="mb-body-section mb-body-section-even">
+
+                <!-- Section Content -->
+                <div class="mb-content-container container-fluid">
+
+                    <!-- Career / Interests Columns-->
+                    <section class="mb-row-to-col-container justify-content-around">
+
+                        <!-- Career-->
+                        <section class="mb-ci-list-container">
+                            <header class="mb-body-section-title mb-body-text-even"> Career </header>
+                            <ul class="mb-ci-list">
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-date"> Sep 2023 - Present </p>
+                                    <p class="mb-ci-list-item-desc"> Rose-Hulman Institute of Technology, B.S. Computer Science & Computer Engineering</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-date"> Jun 2023 - Present </p>
+                                    <p class="mb-ci-list-item-desc"> Keysight Technologies Inc., FPGA Intern</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-date"> Jun 2026 - Present </p>
+                                    <p class="mb-ci-list-item-desc"> Beyond Bounds Studios, Titanborn Project Manager</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-date"> Aug 2022 - Jun 2026 </p>
+                                    <p class="mb-ci-list-item-desc"> Beyond Bounds Studios, Titanborn Content Administrator & Story Team Lead</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Interests-->
+                        <section class="mb-ci-list-container">
+                            <header class="mb-body-section-title mb-body-text-even"> Interests </header>
+                            <ul class="mb-ci-list">
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-list-item-desc"> Computer Architecture</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-list-item-desc"> Embedded Systems</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-list-item-desc"> Graph Theory</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-list-item-desc"> Linear Algebra</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-list-item-desc"> Parallel Programming</p>
+                                </li>
+                                <li class="mb-ci-list-item">
+                                    <p class="mb-ci-list-item-desc"> Video Game Development</p>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+                </div>
+            </section>
 
         </div>
 
