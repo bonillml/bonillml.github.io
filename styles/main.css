@@ -4,11 +4,10 @@
 .mb-navbar
 {
     background-color: rgb(29, 33, 57);
-
+    height: 75px;
+    margin-bottom: 25px;
     max-width: 100vw;
     max-height: 75px;
-
-    height: 75px;
     width: 100vw;
 }
 
@@ -28,17 +27,76 @@
     
 }
 
-/* General Purpose */
-.mb-body
+/* High-Level Content Containers */
+
+.mb-body 
 {
+    background-color: rgb(231, 240, 244);
     max-width: 100vw;
 }
 
-.mb-body-section
+.mb-body-container
 {
-    /* height: 50vh; */
-    padding: 10px;
-    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 15vw;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px)
+{
+    .mb-body-container
+    {
+        padding: 0px 10vw;
+    }
+}
+
+/* Home Page Card Visuals */
+
+.mb-card-visual
+{
+    background-color: white;
+    border-radius: 25px;
+    padding: 25px 45px;
+    margin: 25px 25px;
+}
+
+.mb-card-container-100
+{
+    max-width: calc(70vw * 1);
+}
+
+.mb-card-container-75
+{
+    max-width: calc(70vw * 0.75);
+}
+
+.mb-card-container-70
+{
+    max-width: calc(70vw * 0.7);
+}
+
+.mb-card-container-50
+{
+    max-width: calc(70vw * 0.5);
+}
+.mb-card-container-30
+{
+    max-width: calc(70vw * 0.3);
+}
+
+.mb-card-container-25
+{
+    max-width: calc(70vw * 0.25);
+}
+
+@media screen and (max-width: 768px)
+{
+
+    .mb-card-container-100, .mb-card-container-75, .mb-card-container-70, .mb-card-container-50, .mb-card-container-30, .mb-card-container-25
+    {
+        max-width: calc(80vw * 1);;
+    }
 }
 
 .mb-body-section-even
@@ -56,6 +114,7 @@
     font-size: 30px;
     font-weight: bold;
     margin: 0px 0px 10px 0px;
+    max-width: 100%;
 }
 
 .mb-body-text-even
@@ -77,13 +136,19 @@
 {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin: 10px 5vw 10px 5vw;
+    max-width: 100%;
+    /* flex-wrap: wrap; */
+    /* margin: 10px 5vw 10px 5vw; */
 }
 
 
 @media screen and (max-width: 768px) 
 {
+    .mb-body-section-title
+    {
+        margin: 0px auto;
+        text-align: center;
+    }
 
     .mb-row-to-col-container
     {
@@ -93,24 +158,26 @@
 }
 
 /* About Me Section */
+
 .mb-am-text
 {
     font-size: 20px;
     max-width: 50vw;
     overflow-wrap: break-word;
-    width: calc(80vw - 300px)
+    width: calc(100% - 7vw)
 }
 
 .mb-am-text-container
 {
-    margin: 3.5vw;
+    margin: 15px;
+    max-width: 100%;
 }
 
 .mb-am-portrait
 {
     aspect-ratio: 1;
     border-radius: 15px;
-    margin: 3.5vw;
+    margin: 15px;
     max-width: 250px;
     object-fit: cover;
     object-position: center center;
@@ -127,9 +194,9 @@
 
     .mb-am-text
     {
+        margin: 0px auto;
         max-width: 75vw;
         text-align: center;
-        width: 75vw
     }
 
     .mb-am-text-container
@@ -139,7 +206,8 @@
 
     .mb-am-portrait
     {
-        margin: 1.5vw;
+        margin: 0px 1.5vw;
+        margin-top: 25px;
     }
 }
 
@@ -150,6 +218,7 @@
     display: flex;
     flex-direction: row;
     justify-content: left;
+    max-width: 100%;
 }
 
 .media-icon
@@ -206,7 +275,6 @@
 
 .mb-ci-list 
 {
-
     border-left-color: black;
     border-left-style: solid;
     border-left-width: 5px;
@@ -237,9 +305,9 @@
 
 @media screen and (max-width: 768px)
 {
-    .mb-ci-list-item
+    .mb-ci-list-container
     {
-        width: 45vw;
+        align-items: start;
     }
 }
 
