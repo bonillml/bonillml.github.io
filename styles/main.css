@@ -43,7 +43,6 @@
     max-width: 100%;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 768px)
 {
     .mb-body-container
@@ -62,8 +61,6 @@
     margin: 25px 25px;
 }
 
-=======
->>>>>>> ac39cc48c1d6859b2805bba3237cc0487ac57b24
 .mb-card-container-100
 {
     max-width: calc(70vw * 1);
@@ -95,28 +92,11 @@
 
 @media screen and (max-width: 768px)
 {
-<<<<<<< HEAD
 
     .mb-card-container-100, .mb-card-container-75, .mb-card-container-70, .mb-card-container-50, .mb-card-container-30, .mb-card-container-25
     {
         max-width: calc(80vw * 1);;
     }
-=======
-    .mb-card-container-75, .mb-card-container-70, .mb-card-container-50, .mb-card-container-30, .mb-card-container-25
-    {
-        max-width: calc(70vw * 1);;
-    }
-}
-
-/* Home Page Card Visuals */
-
-.mb-card-visual
-{
-    background-color: white;
-    border-radius: 25px;
-    padding: 25px 45px;
-    margin: 25px 25px;
->>>>>>> ac39cc48c1d6859b2805bba3237cc0487ac57b24
 }
 
 .mb-body-section-even
