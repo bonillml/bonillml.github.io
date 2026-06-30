@@ -137,8 +137,6 @@
     display: flex;
     flex-direction: row;
     max-width: 100%;
-    /* flex-wrap: wrap; */
-    /* margin: 10px 5vw 10px 5vw; */
 }
 
 
@@ -146,6 +144,7 @@
 {
     .mb-body-section-title
     {
+        /* font-size: 25px; */
         margin: 0px auto;
         text-align: center;
     }
