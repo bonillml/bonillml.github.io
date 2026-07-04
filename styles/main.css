@@ -358,10 +358,14 @@
     z-index: 999;
 }
 
-#mb-back-to-top-btn:hover 
+@media screen and (min-width: 768px)
 {
-    background-color: rgb(175, 133, 181);
+    #mb-back-to-top-btn:hover 
+    {
+        background-color: rgb(175, 133, 181);
+    }
 }
+
 
 #mb-back-to-top-btn.visible
 {
