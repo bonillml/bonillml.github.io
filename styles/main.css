@@ -38,16 +38,75 @@
 .mb-body-container
 {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 0px 15vw;
     max-width: 100%;
 }
 
-@media screen and (max-width: 768px)
+.mb-body-container-row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
+
+.mb-body-section-even
+{
+    background-color: rgb(231, 240, 244);
+}
+
+.mb-body-section-odd
+{
+    background-color: rgb(64, 73, 123);
+}
+
+.mb-body-section-title
+{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px auto; 
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.mb-body-text
+{
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.mb-content-container
+{
+    padding: 0px 1.5vw 0px 1.5vw;
+}
+
+@media screen and (max-width: 768px) 
 {
     .mb-body-container
     {
         padding: 0px 10vw;
+    }
+
+    .mb-body-container-row
+    {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mb-body-section-title
+    {
+        font-size: 25px;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    .mb-body-text
+    {
+        font-size: 15px;
     }
 }
 
@@ -64,30 +123,36 @@
 .mb-card-container-100
 {
     max-width: calc(70vw * 1);
+    width: calc(70vw * 1);
 }
 
 .mb-card-container-75
 {
-    max-width: calc(70vw * 0.75);
+    max-width: calc(70vw * 0.75 - 50px);
+    width: calc(70vw * 0.75 - 50px);
 }
 
 .mb-card-container-70
 {
-    max-width: calc(70vw * 0.7);
+    max-width: calc(70vw * 0.7 - 50px);
+    width: calc(70vw * 0.7 - 50px);
 }
 
 .mb-card-container-50
 {
-    max-width: calc(70vw * 0.5);
+    max-width: calc(70vw * 0.5 - 50px);
+    width: calc(70vw * 0.5 - 50px);
 }
 .mb-card-container-30
 {
-    max-width: calc(70vw * 0.3);
+    max-width: calc(70vw * 0.3 - 50px);
+    width: calc(70vw * 0.3 - 50px);
 }
 
 .mb-card-container-25
 {
-    max-width: calc(70vw * 0.25);
+    max-width: calc(70vw * 0.25 - 50px);
+    width: calc(70vw * 0.25 - 50px);
 }
 
 @media screen and (max-width: 768px)
@@ -100,64 +165,8 @@
 
     .mb-card-container-100, .mb-card-container-75, .mb-card-container-70, .mb-card-container-50, .mb-card-container-30, .mb-card-container-25
     {
-        max-width: calc(80vw * 1);;
-    }
-}
-
-.mb-body-section-even
-{
-    background-color: rgb(231, 240, 244);
-}
-
-.mb-body-section-odd
-{
-    background-color: rgb(64, 73, 123);
-}
-
-.mb-body-section-title
-{
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0px 0px 10px 0px;
-    max-width: 100%;
-}
-
-.mb-body-text-even
-{
-    color: black
-}
-
-.mb-body-text-odd
-{
-    color: rgb(219, 241, 250);
-}
-
-.mb-content-container
-{
-    padding: 0px 1.5vw 0px 1.5vw;
-}
-
-.mb-row-to-col-container
-{
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
-}
-
-
-@media screen and (max-width: 768px) 
-{
-    .mb-body-section-title
-    {
-        /* font-size: 25px; */
-        margin: 0px auto;
-        text-align: center;
-    }
-
-    .mb-row-to-col-container
-    {
-        align-items: center;
-        flex-direction: column;
+        max-width: calc(80vw * 1);
+        width: calc(80vw * 1);;
     }
 }
 
@@ -165,10 +174,8 @@
 
 .mb-am-text
 {
-    /* font-size: 20px; */
     max-width: 50vw;
     overflow-wrap: break-word;
-    /* width: calc(100% - 7vw) */
 }
 
 .mb-am-text-container
@@ -177,24 +184,8 @@
     max-width: 100%;
 }
 
-.mb-am-portrait
-{
-    aspect-ratio: 1;
-    border-radius: 15px;
-    margin: 15px;
-    max-width: 250px;
-    object-fit: cover;
-    object-position: center center;
-    width: 200px;
-}
-
 @media screen and (max-width: 768px)
 {
-
-    .mb-am-name 
-    {
-        text-align: center;
-    }
 
     .mb-am-text
     {
@@ -207,8 +198,38 @@
     {
         margin: 15px;
     }
+}
 
-    .mb-am-portrait
+/* Images */
+
+.mb-img 
+{
+    border-radius: 15px;
+    margin: 15px;
+    width: 100%;
+}
+
+.mb-img-square 
+{
+    aspect-ratio: 1;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.mb-img-square-full
+{
+    object-fit: fill;
+}
+
+.mb-img-square-cropped
+{
+    object-fit: cover;
+    object-position: center center;
+}
+
+@media screen and (max-width: 768px)
+{
+    .mb-img
     {
         margin: 0px 1.5vw;
         margin-top: 25px;
@@ -301,7 +322,7 @@
 .mb-ci-list-container 
 {
 
-    align-items: center;
+    /* align-items: center; */
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
