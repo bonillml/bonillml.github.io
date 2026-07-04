@@ -22,15 +22,20 @@
     </head>
 
     <!-- Body Wrapper -->
-    <body class="mb-body">
+    <body id="HomePage" class="mb-body">
 
         <!-- Navigation Bar -->
         <nav class="mb-navbar d-flex justify-content-evenly align-items-center">
-            <button type="button" class="btn mb-navbar-button" onclick="scrollToSection('body-section-0')"> Home </button>
+            <button type="button" class="btn mb-navbar-button" onclick="scrollToSection('HomePage')"> Home </button>
             <button type="button" class="btn mb-navbar-button" onclick="scrollToSection('body-section-1')"> W.I.P. </button>
             <button type="button" class="btn mb-navbar-button" onclick="scrollToSection('body-section-2')"> W.I.P. </button>
             <button type="button" class="btn mb-navbar-button" onclick="scrollToSection('body-section-3')"> W.I.P. </button>
         </nav>
+
+        <!-- Back-to-Top Button -->
+        <button type="button" id="mb-back-to-top-btn" class="btn" onclick="scrollToTop('mb-back-to-top-btn', 'HomePage')">
+            Back to Top
+        </button>
 
         
         <!-- Body Content -->
@@ -124,20 +129,67 @@
                 </section>
             </div>
 
-            <section class="mb-card-container-100 mb-card-visual container-fluid"> 
-
-            </section>
+            <div class="mb-body-container-row">
+                <section class="mb-card-container-100 mb-card-visual container-fluid"> 
+                    
+                </section>
+            </div>
         </div>
 
         <script>
-            function scrollToSection(id) 
-            {
+
+            // Global Variables
+            let disableScrollListener = false;
+            let lastScrollY = window.scrollY;
+            let scrollUpDist = 0;
+            const toTopBtnScrollThresh = 100;
+
+            function scrollToSection(id) {
                 document.getElementById(id).scrollIntoView(
                 {
                     behavior: 'smooth',
                     block: 'start'
                 });
             }
+
+            function scrollToTop(selfId, targetId) {
+                disableScrollListener = true;
+                scrollToSection(targetId);
+                scrollUpDist = 0;
+                document.getElementById(selfId).classList.remove('visible');
+
+                setTimeout(() => {
+                    disableScrollListener = false;
+                    lastScrollY = window.scrollY;
+                }, 500);
+            }
+
+            // Back-to-Top button appears after user scrolls up
+            window.addEventListener('scroll', () => {
+                if (disableScrollListener) return;
+
+                const toTopBtn = document.querySelector('#mb-back-to-top-btn');
+                const curScrollY = window.scrollY;
+
+                if (curScrollY < lastScrollY) {
+                    scrollUpDist += lastScrollY - curScrollY;
+                }
+                else {
+                    scrollUpDist = 0;
+                    toTopBtn.classList.remove('visible');
+                }
+
+                if ((scrollUpDist > toTopBtnScrollThresh) && (curScrollY > 100)) {
+                    toTopBtn.classList.add('visible');
+                }
+
+                if (curScrollY <= 100) {
+                    scrollUpDist = 0;
+                    toTopBtn.classList.remove('visible');
+                }
+
+                lastScrollY = curScrollY;
+            });
         </script>   
     </body>
 

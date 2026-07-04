@@ -337,3 +337,34 @@
 }
 
 /* IDs (#) */
+
+#mb-back-to-top-btn
+{
+    background-color: rgb(158, 187, 226);
+    border: solid;
+    border-width: 3px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 550;
+    left: 50%;
+    opacity: 0;
+    padding: 15px 25px;
+    pointer-events: none;
+    position: fixed;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    top: 90px;
+    z-index: 999;
+}
+
+#mb-back-to-top-btn:hover 
+{
+    background-color: rgb(175, 133, 181);
+}
+
+#mb-back-to-top-btn.visible
+{
+    opacity: 1;
+    pointer-events: auto;
+}
