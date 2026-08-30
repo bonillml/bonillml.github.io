@@ -1,0 +1,85 @@
+/* Images */
+
+.mb-img 
+{
+    border-radius: 15px;
+    margin: 15px;
+    width: 100%;
+}
+
+.mb-img-square 
+{
+    aspect-ratio: 1;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.mb-img-square-full
+{
+    object-fit: fill;
+}
+
+.mb-img-square-cropped
+{
+    object-fit: cover;
+    object-position: center center;
+}
+
+@media screen and (max-width: 768px)
+{
+    .mb-img
+    {
+        margin: 0px 1.5vw;
+        margin-top: 25px;
+    }
+}
+
+/* Contact Me / Social Medias */
+
+.media-icon
+{
+    min-width: 21px;
+    width: 25px;
+}
+
+.linkedin-interactive
+{
+    align-items: center;
+    cursor: pointer !important;
+    display:inline-flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.media-link
+{
+    align-items: center;
+    aspect-ratio: 1;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    width: 50px;
+}
+
+.media-link:hover, .media-link:focus
+{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: black;
+    outline: none;
+}
+
+/* Spotify Embed */
+
+.spotify-embed
+{
+    border-radius: 12px;
+    margin-top: 45px;
+    max-height: 50vh;
+    min-height: 352px;
+    overflow: auto;
+    resize: vertical;
+
+    width: 100%;
+}
