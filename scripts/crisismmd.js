@@ -3,8 +3,17 @@
  *
  * HOW THIS PAGE TALKS TO YOUR MODEL
  * ---------------------------------
- * Set CONFIG.API_URL below to your model's endpoint. The page sends one
- * multipart/form-data POST. Fields depend on the mode:
+ * The address of your model's server is NOT hardcoded. Open the page with
+ * the address added to the end of the URL, for example:
+ *
+ *   https://YOU.github.io/REPO/?api=https://random-words.trycloudflare.com
+ *
+ * The page remembers the address in this browser, so later visits work
+ * without the ?api= part until the address changes (a free Cloudflare
+ * tunnel gets a new address every time you restart it).
+ *
+ * The page sends one multipart/form-data POST to <api address>/predict.
+ * Fields depend on the mode:
  *
  *   mode        "link" | "html" | "pair"             (always sent)
  *   tweet_url   the tweet link                       (mode "link")
@@ -26,9 +35,8 @@
  *
  * Errors: any non-2xx reply is shown to the person. Use { "detail": "message" }
  * (FastAPI style) or { "error": "message" } to control the wording.
- *
- * If the model lives in a different Space, use its full URL here, for example
- * "https://your-name-your-space.hf.space/predict", and enable CORS on that server.
+ * The server must allow this page's origin with CORS
+ * (for GitHub Pages: https://YOUR_USERNAME.github.io).
  *
  * Add ?demo=1 to this page's address to preview the design with simulated
  * results (no server needed). Demo results are labeled as simulated.
@@ -37,8 +45,9 @@
   'use strict';
 
   const CONFIG = {
-    API_URL: '/predict',
-    TIMEOUT_MS: 120000,       // Spaces can need a minute to wake up
+    API_PATH: '/predict',
+    API_KEY: 'tt-api-base',   // localStorage key for the remembered server address
+    TIMEOUT_MS: 120000,       // generous, in case the first request is slow
     SLOW_NOTICE_MS: 8000,
     MAX_IMAGES: 4,
     MAX_IMAGE_MB: 10,
@@ -132,6 +141,21 @@
 
   function revokeAll(urls) {
     for (const url of urls.splice(0)) URL.revokeObjectURL(url);
+  }
+
+  // The server address comes from ?api=... in the page URL (and is remembered),
+  // so you never have to edit this file when the tunnel address changes.
+  function resolveApiBase() {
+    const fromQuery = new URLSearchParams(window.location.search).get('api');
+    if (fromQuery) {
+      try { localStorage.setItem(CONFIG.API_KEY, fromQuery); } catch (e) { /* storage blocked */ }
+      return fromQuery.trim().replace(/\/+$/, '');
+    }
+    try {
+      return (localStorage.getItem(CONFIG.API_KEY) || '').trim().replace(/\/+$/, '');
+    } catch (e) {
+      return '';
+    }
   }
 
   /* ------------------------------------------------------------------ */
@@ -440,6 +464,14 @@
   async function predict(payload) {
     if (DEMO) return demoPredict(payload);
 
+    // Fail right away if no server address has been given.
+    const base = resolveApiBase();
+    if (!base) {
+      throw new UserError(
+        'No server address set. Open this page with ?api=YOUR_TUNNEL_URL added to the end of the address.'
+      );
+    }
+
     const body = new FormData();
     body.append('mode', payload.mode);
     if (payload.mode === 'link') body.append('tweet_url', payload.url);
@@ -452,7 +484,11 @@
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), CONFIG.TIMEOUT_MS);
     try {
-      const response = await fetch(CONFIG.API_URL, { method: 'POST', body, signal: controller.signal });
+      const response = await fetch(base + CONFIG.API_PATH, {
+        method: 'POST',
+        body,
+        signal: controller.signal,
+      });
       const type = response.headers.get('content-type') || '';
       let data = null;
       if (type.includes('application/json')) {
@@ -461,9 +497,12 @@
       if (!response.ok) {
         const fromServer = extractMessage(data);
         if (fromServer) throw new UserError(fromServer);
-        const hint = response.status === 404 || response.status === 405
-          ? ' Check that API_URL in script.js points to the model’s prediction endpoint.'
-          : '';
+        let hint = '';
+        if (response.status === 404 || response.status === 405) {
+          hint = ' Check that the ?api= address points to your server and that the path is /predict.';
+        } else if (response.status === 502 || response.status === 530) {
+          hint = ' The tunnel may have stopped or its address changed. Restart cloudflared and reload this page with the new ?api= address.';
+        }
         throw new UserError(`The server returned an error (${response.status}).${hint}`);
       }
       if (data === null) {
@@ -473,9 +512,11 @@
     } catch (error) {
       if (error instanceof UserError) throw error;
       if (error && error.name === 'AbortError') {
-        throw new UserError('The model took too long to respond. Try again in a moment. A sleeping Space can need a minute to wake up.');
+        throw new UserError('The model took too long to respond. Try again in a moment.');
       }
-      throw new UserError('Couldn’t reach the model. Check that the Space is running and that API_URL in script.js is correct.');
+      throw new UserError(
+        'Couldn’t reach the model. Check that the server and the tunnel are both running and that the ?api= address in this page’s URL is current. If they are, open the browser console (Cmd+Option+J) and look for a CORS error.'
+      );
     } finally {
       clearTimeout(timer);
     }
@@ -631,7 +672,7 @@
     els.status.textContent = 'Analyzing the tweet.';
     clearTimeout(state.slowTimer);
     state.slowTimer = setTimeout(() => {
-      els.verdictNote.textContent = 'Still working. If the model was asleep, it can take a minute to start.';
+      els.verdictNote.textContent = 'Still working. The first request can take a little longer while the model warms up.';
     }, CONFIG.SLOW_NOTICE_MS);
   }
 
