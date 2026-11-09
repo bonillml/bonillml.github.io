@@ -53,6 +53,7 @@
     MAX_IMAGE_MB: 10,
     MAX_TEXT_CHARS: 2000,
     MAX_HTML_CHARS: 500000,
+    MODES: ['pair'],
     THEME_KEY: 'tt-theme',
   };
 
@@ -111,7 +112,7 @@
   };
 
   const state = {
-    mode: 'link',
+    mode: 'pair',
     files: [],          // [{ file, url }] for the "pair" mode previews
     resultUrls: [],     // object URLs created for the readout, revoked on reset
     busy: false,
@@ -822,8 +823,28 @@
     initTheme();
     initDropzone();
 
+    // for (const tab of els.tabs) tab.addEventListener('click', () => selectMode(tab.dataset.mode));
+    // els.tablist.addEventListener('keydown', onTabKeydown);
+
+    // Remove the tabs and panels that CONFIG.MODES leaves out.
+    const enabled = new Set(CONFIG.MODES);
+    els.tabs = els.tabs.filter((tab) => {
+      if (enabled.has(tab.dataset.mode)) return true;
+      $(tab.getAttribute('aria-controls')).remove();
+      tab.remove();
+      return false;
+    });
+    if (els.tabs.length === 0) {
+      throw new Error("CONFIG.MODES must include at least one of 'link', 'html', 'pair'.");
+    }
+    if (els.tabs.length === 1) {              // nothing to switch between: hide the tab bar
+      els.tablist.hidden = true;
+      const panel = $(els.tabs[0].getAttribute('aria-controls'));
+      panel.removeAttribute('role');
+      panel.removeAttribute('aria-labelledby');
+    }
+
     for (const tab of els.tabs) tab.addEventListener('click', () => selectMode(tab.dataset.mode));
-    els.tablist.addEventListener('keydown', onTabKeydown);
 
     for (const [input, errorEl] of FIELD_PAIRS()) {
       input.addEventListener('input', () => {
@@ -836,7 +857,7 @@
     els.form.addEventListener('submit', onSubmit);
     els.clear.addEventListener('click', onClear);
 
-    selectMode('link');
+    selectMode(els.tabs[0].dataset.mode);
     updateCounter();
     updateDropzone();
     resetReadout();
