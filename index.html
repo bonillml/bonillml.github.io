@@ -1,212 +1,168 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html lang="en" s>
-
-    <!-- Head Wrapper -->
     <head>
-
-        <!-- Encoding & Controll -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Matt Bonilla | Computer Science &amp; Computer Engineering</title>
 
-        <!-- Bootstrap Framework -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-        <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
 
-
-        <!-- CSS Scripts -->
-        <!-- <link rel="stylesheet" href="/styles/details.css"> -->
+        <!-- Styles -->
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/media.css">
 
-        <!-- Tab Bar Details -->
-        <title> Welcome to my site! </title>
-
+        <script src="./scripts/main.js" defer></script>
     </head>
 
-    <!-- Body Wrapper -->
-    <body id="HomePage" class="mb-body">
+    <body id="HomePage">
 
-        <!-- Navigation Bar -->
-        <nav class="mb-navbar d-flex justify-content-evenly align-items-center">
-            <a href="index.html"><button type="button" class="btn mb-navbar-button"> Home </button></a> 
-            <button type="button" class="btn mb-navbar-button"> W.I.P. </button>
-            <a href="hobbies.html"><button type="button" class="btn mb-navbar-button" > Hobbies </button></a> 
-            <button type="button" class="btn mb-navbar-button" data-bs-toggle="menu" aria-expanded="false"> Projects </button>
-            <div class="menu">
-                <a class="menu-item" href="crisismmd.html"> CrisisMMD Classifier </a>
+        <!-- Navigation -->
+        <nav class="mb-nav" aria-label="Main">
+            <a href="index.html" class="mb-nav-link" aria-current="page">Home</a>
+            <a href="hobbies.html" class="mb-nav-link">Hobbies</a>
+            <div class="mb-dropdown">
+                <button type="button" class="mb-nav-link" aria-haspopup="true" aria-expanded="false">Projects</button>
+                <div class="mb-menu">
+                    <a class="mb-menu-item" href="crisismmd.html">CrisisMMD Classifier</a>
+                </div>
             </div>
         </nav>
 
-        <!-- Back-to-Top Button -->
-        <button type="button" id="mb-back-to-top-btn" class="btn" onclick="scrollToTop('mb-back-to-top-btn', 'HomePage')">
-            Back to Top
-        </button>
+        <button type="button" id="mb-back-to-top-btn">Back to top</button>
 
-        
-        <!-- Body Content -->
-        <div class="mb-body-container container-fluid" style="--bs-gutter-x: 0rem">
+        <main>
 
-            <div class="mb-body-container-row">
+            <!-- Hero -->
+            <header class="mb-hero">
+                <canvas class="mb-hero-canvas" aria-hidden="true"></canvas>
+                <div class="mb-hero-inner">
+                    <div>
+                        <h1 class="mb-hero-name">
+                            <span class="mb-line"><span>Matt</span></span>
+                            <span class="mb-line"><span>Bonilla</span></span>
+                        </h1>
+                        <p class="mb-hero-sub">Double major in Computer Science and Computer Engineering at Rose-Hulman Institute of Technology.</p>
 
-                <!-- Intro / About Me-->
-                <section class="mb-card-container-100 mb-card-visual container-fluid">
-                    <div class="mb-body-container-row">
+                        <nav class="mb-media-container" aria-label="Social links">
+                            <a href="mailto:mbonilla2023@gmail.com" title="Email" class="media-link">
+                                <img src="./images/email_icon.svg" alt="Email" class="media-icon">
+                            </a>
+                            <a href="https://www.linkedin.com/in/matthew-bonilla-7897b0318/" title="LinkedIn" class="media-link">
+                                <img src="./images/LI-In-Bug.png" alt="LinkedIn" class="media-icon">
+                            </a>
+                            <a href="https://github.com/bonillml" title="GitHub" class="media-link">
+                                <img src="./images/GitHub_Invertocat_Black.svg" alt="GitHub" class="media-icon">
+                            </a>
+                            <a href="https://www.rose-hulman.edu/index.html" title="Rose-Hulman Institute of Technology" class="media-link">
+                                <img src="./images/RH_G_HiRes-RGB-1c.png" alt="Rose-Hulman Institute of Technology" class="media-icon">
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="mb-hero-aside">
                         <img src="./images/self_portrait.jpg" alt="Matt Bonilla" title="Matt Bonilla" class="mb-img mb-img-square mb-img-square-cropped">
-                        <section class="mb-am-text-container flex-grow-1">
-                            <header class="mb-body-section-title"> Matt Bonilla </header>
-                            <div class="d-flex flex-column">
-                                <div class="mb-am-text mb-body-text"> Double Major in Computer Science and Computer Engineering at Rose-Hulman Institute of Technology. </div>
-                                <nav class="mb-media-container" style="margin-top: 30px">
-                                    
-                                    <!-- Social Media Links & Icons -->
-                                    <a href="mailto:mbonilla2023@gmail.com" title="Email" class="media-link">
-                                        <img src="./images/email_icon.svg" alt="Email" class="media-icon">
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/matthew-bonilla-7897b0318/" title="LinkedIn" class="media-link">
-                                        <span class="linkedin-interactive">
-                                            <img src="./images/LI-In-Bug.png" alt="LinkedIn" class="media-icon">
-                                        </span> 
-                                    </a>
-                                    <a href="https://github.com/bonillml" title="GitHub" class="media-link">
-                                        <img src="./images/GitHub_Invertocat_Black.svg" alt="GitHub" class="media-icon">
-                                    </a>
-                                    <a href="https://www.rose-hulman.edu/index.html" title="Rose-Hulman Institute of Technology" class="media-link">
-                                        <img src="./images/RH_G_HiRes-RGB-1c.png" alt="Rose-Hulman Institute of Technology" class="media-icon">
-                                    </a>
-                                </nav>
-                            </div>
-                        </section>
-                    </div>          
-                </section>
-            </div>
+                    </div>
+                </div>
+            </header>
 
-            <!-- Education -->
-            <div class="mb-body-container-row">
-                <section class="mb-card-container-100 mb-card-visual mb-ci-list-container"> 
-                    <header class="mb-body-section-title"> Education </header>
-                    <ul class="mb-ci-list">
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-date"> Sep 2023 - May 2027 </p>
-                            <p class="mb-ci-list-item-desc"> Rose-Hulman Institute of Technology - B.S., Computer Science & Computer Engineering (Double Major) </p>
-                        </li>
+            <!-- Career -->
+            <section class="mb-section mb-career" aria-labelledby="career-title">
+                <h2 class="mb-section-title" id="career-title">Career</h2>
+                <ul class="mb-rows">
+                    <li class="mb-row">
+                        <p class="mb-row-date">Jun 2026 - Nov 2026</p>
+                        <div>
+                            <h3 class="mb-row-role">R&amp;D FPGA Intern</h3>
+                            <p class="mb-row-org">Keysight Technologies Inc.</p>
+                        </div>
+                    </li>
+                    <li class="mb-row">
+                        <p class="mb-row-date">Jun 2026 - Present</p>
+                        <div>
+                            <h3 class="mb-row-role">Titanborn Project Manager</h3>
+                            <p class="mb-row-org">Beyond Bounds Studios</p>
+                        </div>
+                    </li>
+                    <li class="mb-row">
+                        <p class="mb-row-date">Jun 2025 - Aug 2025</p>
+                        <div>
+                            <h3 class="mb-row-role">Embedded System Engineer</h3>
+                            <p class="mb-row-org">Rose-Hulman Institute of Technology</p>
+                        </div>
+                    </li>
+                    <li class="mb-row">
+                        <p class="mb-row-date">Sep 2024 - Present</p>
+                        <div>
+                            <h3 class="mb-row-role">TA and Grader for ECE &amp; CSSE Departments</h3>
+                            <p class="mb-row-org">Rose-Hulman Institute of Technology</p>
+                        </div>
+                    </li>
+                    <li class="mb-row">
+                        <p class="mb-row-date">Aug 2022 - Jun 2026</p>
+                        <div>
+                            <h3 class="mb-row-role">Titanborn Content Administrator &amp; Story Team Lead</h3>
+                            <p class="mb-row-org">Beyond Bounds Studios</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Education + Interests -->
+            <section class="mb-section mb-bento" aria-label="Education and interests">
+                <div class="mb-tile mb-tile--edu">
+                    <h2 class="mb-tile-title">Education</h2>
+                    <div>
+                        <p class="mb-edu-degree">B.S., Computer Science &amp; Computer Engineering (Double Major)</p>
+                        <p class="mb-edu-meta">Rose-Hulman Institute of Technology, Sep 2023 - May 2027</p>
+                    </div>
+                </div>
+                <div class="mb-tile mb-tile--int">
+                    <h2 class="mb-tile-title">Interests</h2>
+                    <ul class="mb-chips">
+                        <li class="mb-chip">Computer Architecture</li>
+                        <li class="mb-chip">Embedded Systems</li>
+                        <li class="mb-chip">FPGA Design</li>
+                        <li class="mb-chip">Graph Theory</li>
+                        <li class="mb-chip">Linear Algebra</li>
+                        <li class="mb-chip">Parallel Programming</li>
+                        <li class="mb-chip">Video Game Development</li>
                     </ul>
-                </section>
-            </div>
+                </div>
+            </section>
 
-            <div class="mb-body-container-row">
+            <!-- Projects -->
+            <section class="mb-section" aria-labelledby="projects-title">
+                <div class="mb-carousel">
+                    <div class="mb-projects-head">
+                        <h2 class="mb-section-title" id="projects-title">Projects</h2>
+                        <div class="mb-carousel-controls">
+                            <button type="button" class="mb-carousel-btn" data-carousel="prev" aria-label="Previous project">&#8592;</button>
+                            <button type="button" class="mb-carousel-btn" data-carousel="next" aria-label="Next project">&#8594;</button>
+                        </div>
+                    </div>
+                    <div class="mb-carousel-track">
+                        <a class="mb-slide" href="crisismmd.html">
+                            <h3>CrisisMMD Classifier</h3>
+                            <p>A front-end for a multimodal crisis-response classifier, hosted right here on this site.</p>
+                            <span class="mb-slide-cta">Open the classifier</span>
+                        </a>
+                        <div class="mb-slide mb-slide--muted">
+                            <h3>More on the way</h3>
+                            <p>New projects will show up here as they're finished.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Career List -->
-                <section class="mb-card-container-70 mb-card-visual mb-ci-list-container">
-                    <header class="mb-body-section-title"> Career </header>
-                    <ul class="mb-ci-list">
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-date"> Jun 2026 - Nov 2026 </p>
-                            <p class="mb-ci-list-item-desc"> Keysight Technologies Inc. - R&D FPGA Intern</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-date"> Jun 2026 - Present </p>
-                            <p class="mb-ci-list-item-desc"> Beyond Bounds Studios - Titanborn Project Manager</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-date"> Sep 2024 - Present </p>
-                            <p class="mb-ci-list-item-desc"> Rose-Hulman Institute of Technology - TA and Grader for ECE & CSSE Departments</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-date"> Aug 2022 - Jun 2026 </p>
-                            <p class="mb-ci-list-item-desc"> Beyond Bounds Studios - Titanborn Content Administrator & Story Team Lead</p>
-                        </li>
-                    </ul>
-                </section>
+        </main>
 
-                <!-- Interests List -->
-                <section class="mb-card-container-30 mb-card-visual mb-ci-list-container">
-                    <header class="mb-body-section-title"> Interests </header>
-                    <ul class="mb-ci-list">
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> Computer Architecture</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> Embedded Systems</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> FPGA Design</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> Graph Theory</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> Linear Algebra</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> Parallel Programming</p>
-                        </li>
-                        <li class="mb-ci-list-item">
-                            <p class="mb-ci-list-item-desc"> Video Game Development</p>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </div>
-
-        <script>
-
-            // Global Variables
-            let disableScrollListener = false;
-            let lastScrollY = window.scrollY;
-            let scrollUpDist = 0;
-            const toTopBtnScrollThresh = 100;
-
-            function scrollToSection(id) {
-                document.getElementById(id).scrollIntoView(
-                {
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-
-            function scrollToTop(selfId, targetId) {
-                disableScrollListener = true;
-                scrollToSection(targetId);
-                scrollUpDist = 0;
-                document.getElementById(selfId).classList.remove('visible');
-
-                setTimeout(() => {
-                    disableScrollListener = false;
-                    lastScrollY = window.scrollY;
-                }, 500);
-            }
-
-            // Back-to-Top button appears after user scrolls up
-            window.addEventListener('scroll', () => {
-                if (disableScrollListener) return;
-
-                const toTopBtn = document.querySelector('#mb-back-to-top-btn');
-                const curScrollY = window.scrollY;
-
-                if (curScrollY < lastScrollY) {
-                    scrollUpDist += lastScrollY - curScrollY;
-                }
-                else {
-                    scrollUpDist = 0;
-                    toTopBtn.classList.remove('visible');
-                }
-
-                if ((scrollUpDist > toTopBtnScrollThresh) && (curScrollY > 100)) {
-                    toTopBtn.classList.add('visible');
-                }
-
-                if (curScrollY <= 100) {
-                    scrollUpDist = 0;
-                    toTopBtn.classList.remove('visible');
-                }
-
-                lastScrollY = curScrollY;
-            });
-        </script>   
+        <footer class="mb-footer">
+            <p>Matt Bonilla</p>
+            <a href="mailto:mbonilla2023@gmail.com">mbonilla2023@gmail.com</a>
+        </footer>
     </body>
-
-
 
 </html>

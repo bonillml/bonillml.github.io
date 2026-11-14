@@ -1,120 +1,69 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html lang="en" s>
-
-    <!-- Head Wrapper -->
     <head>
-
-        <!-- Encoding & Controll -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hobbies | Matt Bonilla</title>
 
-        <!-- Bootstrap Framework -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
 
-        <!-- CSS Scripts -->
-        <!-- <link rel="stylesheet" href="/styles/details.css"> -->
+        <!-- Styles -->
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/media.css">
 
-        <!-- Tab Bar Details -->
-        <title> Welcome to my site! </title>
-
+        <script src="./scripts/main.js" defer></script>
     </head>
 
-    <!-- Body Wrapper -->
-    <body id="HobbiesPage" class="mb-body">
+    <body id="HobbiesPage">
 
-        <!-- Navigation Bar -->
-        <nav class="mb-navbar d-flex justify-content-evenly align-items-center">
-            <a href="index.html"><button type="button" class="btn mb-navbar-button"> Home </button></a> 
-            <button type="button" class="btn mb-navbar-button"> W.I.P. </button>
-            <a href="hobbies.html"><button type="button" class="btn mb-navbar-button" > Hobbies </button></a> 
-            <button type="button" class="btn mb-navbar-button"> W.I.P. </button>
+        <!-- Navigation -->
+        <nav class="mb-nav" aria-label="Main">
+            <a href="index.html" class="mb-nav-link">Home</a>
+            <a href="hobbies.html" class="mb-nav-link" aria-current="page">Hobbies</a>
+            <div class="mb-dropdown">
+                <button type="button" class="mb-nav-link" aria-haspopup="true" aria-expanded="false">Projects</button>
+                <div class="mb-menu">
+                    <a class="mb-menu-item" href="crisismmd.html">CrisisMMD Classifier</a>
+                </div>
+            </div>
         </nav>
 
-        <!-- Back-to-Top Button -->
-        <button type="button" id="mb-back-to-top-btn" class="btn" onclick="scrollToTop('mb-back-to-top-btn', 'HobbiesPage')">
-            Back to Top
-        </button>
+        <button type="button" id="mb-back-to-top-btn">Back to top</button>
 
-        <!-- Body Content -->
-        <div class="mb-body-container container-fluid" style="--bs-gutter-x: 0rem">
+        <main>
 
-            <!-- Music -->
-            <div class="mb-body-container-row">
-                <section class="mb-card-container-100 mb-card-visual mb-ci-list-container"> 
-                    <header class="mb-body-section-title"> My Music Playlist </header>
-                    <div class="mb-body-text"> 
-                        In my downtime, I love listening to pop, blues, and a variety of rock from the 60s to the 90s.<br>
-                        <br>
-                        On top of just listening, each year I create a new Spotify playlist and add to it all the songs I currently enjoy listening to. For me, it has been fun seeing how my music taste has evolved over time.<br>
-                        <br>
-                        Below is the playlist I've created and added to this year. Feel free to check it out!
+            <header class="mb-hero mb-hero--compact">
+                <canvas class="mb-hero-canvas" aria-hidden="true"></canvas>
+                <div class="mb-hero-inner">
+                    <h1 class="mb-hero-name mb-hero-name--small">
+                        <span class="mb-line"><span>Hobbies</span></span>
+                    </h1>
+                </div>
+            </header>
+
+            <section class="mb-section" aria-labelledby="music-title">
+                <div class="mb-playlist">
+                    <div>
+                        <h2 class="mb-section-title" id="music-title">My music playlist</h2>
+                        <p class="mb-text">In my downtime, I love listening to pop, blues, and a variety of rock from the 60s to the 90s.</p>
+                        <p class="mb-text">On top of just listening, each year I create a new Spotify playlist and add to it all the songs I currently enjoy listening to. For me, it has been fun seeing how my music taste has evolved over time.</p>
+                        <p class="mb-text">Below is the playlist I've created and added to this year. Feel free to check it out!</p>
                     </div>
-                    
-                    <iframe data-testid="embed-iframe" class="spotify-embed" src="https://open.spotify.com/embed/playlist/4vaowZ4FLVnLqrKpQ3nKG7?utm_source=generator&si=3f515258fcea4d74" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </section>
-            </div>
-        </div>
 
-        <script>
+                    <iframe data-testid="embed-iframe" class="spotify-embed" title="Spotify playlist" src="https://open.spotify.com/embed/playlist/4vaowZ4FLVnLqrKpQ3nKG7?utm_source=generator&si=3f515258fcea4d74" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </section>
 
-            // Global Variables
-            let disableScrollListener = false;
-            let lastScrollY = window.scrollY;
-            let scrollUpDist = 0;
-            const toTopBtnScrollThresh = 100;
+        </main>
 
-            function scrollToSection(id) {
-                document.getElementById(id).scrollIntoView(
-                {
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-
-            function scrollToTop(selfId, targetId) {
-                disableScrollListener = true;
-                scrollToSection(targetId);
-                scrollUpDist = 0;
-                document.getElementById(selfId).classList.remove('visible');
-
-                setTimeout(() => {
-                    disableScrollListener = false;
-                    lastScrollY = window.scrollY;
-                }, 500);
-            }
-
-            // Back-to-Top button appears after user scrolls up
-            window.addEventListener('scroll', () => {
-                if (disableScrollListener) return;
-
-                const toTopBtn = document.querySelector('#mb-back-to-top-btn');
-                const curScrollY = window.scrollY;
-
-                if (curScrollY < lastScrollY) {
-                    scrollUpDist += lastScrollY - curScrollY;
-                }
-                else {
-                    scrollUpDist = 0;
-                    toTopBtn.classList.remove('visible');
-                }
-
-                if ((scrollUpDist > toTopBtnScrollThresh) && (curScrollY > 100)) {
-                    toTopBtn.classList.add('visible');
-                }
-
-                if (curScrollY <= 100) {
-                    scrollUpDist = 0;
-                    toTopBtn.classList.remove('visible');
-                }
-
-                lastScrollY = curScrollY;
-            });
-        </script>   
+        <footer class="mb-footer">
+            <p>Matt Bonilla</p>
+            <a href="mailto:mbonilla2023@gmail.com">mbonilla2023@gmail.com</a>
+        </footer>
     </body>
-
-
 
 </html>

@@ -1,85 +1,86 @@
-/* Images */
+/* ==========================================================
+   Portrait
+   ========================================================== */
+.mb-img { display: block; }
 
-.mb-img 
-{
-    border-radius: 15px;
-    margin: 15px;
-    width: 100%;
-}
-
-.mb-img-square 
+.mb-img-square
 {
     aspect-ratio: 1;
-    max-height: 200px;
-    max-width: 200px;
-}
-
-.mb-img-square-full
-{
-    object-fit: fill;
+    height: clamp(150px, 18vw, 230px);
+    width: clamp(150px, 18vw, 230px);
 }
 
 .mb-img-square-cropped
 {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 32px;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.06);
     object-fit: cover;
     object-position: center center;
 }
 
-@media screen and (max-width: 768px)
+/* ==========================================================
+   Social links
+   ========================================================== */
+.mb-media-container
 {
-    .mb-img
-    {
-        margin: 0px 1.5vw;
-        margin-top: 25px;
-    }
-}
-
-/* Contact Me / Social Medias */
-
-.media-icon
-{
-    min-width: 21px;
-    width: 25px;
-}
-
-.linkedin-interactive
-{
-    align-items: center;
-    cursor: pointer !important;
-    display:inline-flex;
-    justify-content: center;
-    pointer-events: none;
+    animation: fade-in 1s 0.6s ease both;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
 }
 
 .media-link
 {
     align-items: center;
-    aspect-ratio: 1;
-    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.94);
     border-radius: 50%;
     display: inline-flex;
+    height: 50px;
     justify-content: center;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     width: 50px;
 }
 
-.media-link:hover, .media-link:focus
+.media-link:hover, .media-link:focus-visible
 {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-color: black;
-    outline: none;
+    box-shadow: 0 0 0 4px rgba(158, 187, 226, 0.5);
+    transform: translateY(-4px);
 }
 
-/* Spotify Embed */
+.media-icon { height: 24px; object-fit: contain; width: 24px; }
+
+/* ==========================================================
+   Hobbies: playlist
+   ========================================================== */
+.mb-playlist
+{
+    background: var(--ink);
+    border-radius: 32px;
+    color: #fff;
+    display: grid;
+    gap: 48px;
+    grid-template-columns: 1fr 1.2fr;
+    padding: clamp(28px, 4vw, 56px);
+}
+
+.mb-playlist .mb-section-title { font-size: clamp(32px, 4vw, 52px); margin-bottom: 24px; }
+.mb-playlist .mb-text { color: var(--muted-on-dark); }
+.mb-playlist .mb-text + .mb-text { margin-top: 16px; }
 
 .spotify-embed
 {
-    border-radius: 12px;
-    margin-top: 45px;
-    max-height: 50vh;
+    align-self: center;
+    border: 0;
+    border-radius: 16px;
+    display: block;
     min-height: 352px;
-    overflow: auto;
-    resize: vertical;
-
     width: 100%;
+}
+
+@media screen and (max-width: 860px)
+{
+    .mb-media-container { margin-top: 24px; }
+    .mb-playlist { gap: 32px; grid-template-columns: 1fr; }
 }
