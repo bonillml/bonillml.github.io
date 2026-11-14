@@ -6,8 +6,8 @@
 .mb-img-square
 {
     aspect-ratio: 1;
-    height: clamp(150px, 18vw, 230px);
-    width: clamp(150px, 18vw, 230px);
+    height: clamp(250px, 18vw, 500px);
+    width: clamp(250px, 18vw, 500px);
 }
 
 .mb-img-square-cropped
@@ -81,6 +81,6 @@
 
 @media screen and (max-width: 860px)
 {
-    .mb-media-container { margin-top: 24px; }
+    .mb-media-container { margin-top: 24px; justify-content: space-evenly;}
     .mb-playlist { gap: 32px; grid-template-columns: 1fr; }
 }
